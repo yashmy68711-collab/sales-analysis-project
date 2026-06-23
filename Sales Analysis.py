@@ -7,10 +7,9 @@ print("Original Data:")
 print(df)
 
 df = df.dropna()
-
 df = df.drop_duplicates()
 
-df["Date"] = pd.to_datetime(df["Date"])
+df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
 
 df["Sales"] = df["Quantity"] * df["Price"]
 
@@ -20,3 +19,25 @@ print("\nProcessed Data:")
 print(df)
 
 print("\nTotal rows after cleaning:", len(df))
+
+monthly_sales = df.groupby("Month")["Sales"].sum()
+
+print("\nMonthly Sales Report:")
+print(monthly_sales)
+
+top_products = df.groupby("Product")["Sales"].sum().sort_values(ascending=False)
+
+print("\nTop Products:")
+print(top_products.head(10))
+
+top_customers = df.groupby("Customer")["Sales"].sum().sort_values(ascending=False)
+
+print("\nTop Customers:")
+print(top_customers.head(10))
+sales_array = np.array(df["Sales"])
+
+print("\nRevenue Summary:")
+print("Total Revenue:", np.sum(sales_array))
+print("Average Revenue:", np.mean(sales_array))
+print("Highest Sale:", np.max(sales_array))
+print("Lowest Sale:", np.min(sales_array))
