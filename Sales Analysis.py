@@ -32,12 +32,4 @@ print(top_products.head(10))
 
 top_customers = df.groupby("Customer")["Sales"].sum().sort_values(ascending=False)
 
-print("\nTop Customers:")
-print(top_customers.head(10))
-sales_array = np.array(df["Sales"])
 
-print("\nRevenue Summary:")
-print("Total Revenue:", np.sum(sales_array))
-print("Average Revenue:", np.mean(sales_array))
-print("Highest Sale:", np.max(sales_array))
-print("Lowest Sale:", np.min(sales_array))
