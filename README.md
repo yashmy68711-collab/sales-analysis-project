@@ -54,6 +54,15 @@ NumPy is used for numerical calculations such as:
 - Lowest sale
 - Converting sales data into NumPy arrays
 
----
+---## 📂 Project Structure
+
+```text
+sales-analysis-project/
+│
+├── README.md
+├── Sales Analysis.py
+└── data.csv
+
+
 
 
