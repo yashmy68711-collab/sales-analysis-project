@@ -56,11 +56,4 @@ NumPy is used for numerical calculations such as:
 
 ---
 
-## 📂 Project Structure
 
-```text
-sales-analysis-project/
-│
-├── README.md
-├── Sales Analysis.py
-└── data.csv
